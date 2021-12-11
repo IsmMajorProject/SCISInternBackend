@@ -12,8 +12,8 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-// app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 // DB config
 const db = require("./config/keys").mongoURI; // change to this process.env.MONGODB_URL
