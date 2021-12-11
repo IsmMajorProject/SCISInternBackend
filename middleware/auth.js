@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const jwtSecret = require("../config/keys").jwtSecret;
+const jwtSecret = process.env.JWT_SECRET;
 
 function auth(userType) {
   // Return default function if invalid option specified
