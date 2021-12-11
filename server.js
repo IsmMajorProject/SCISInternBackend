@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // DB config
-const db = require("./config/keys").mongoURI; // change to this process.env.MONGODB_URL
+const db = process.env.MONGODB_URL; // change to this process.env.MONGODB_URL
 
 // Connect to DB
 mongoose

@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
-jwtSecret = require("../../config/keys").jwtSecret;
+jwtSecret = process.env.JWT_SECRET;;
 
 // Authorization middleware
 const auth = require("../../middleware/auth");
