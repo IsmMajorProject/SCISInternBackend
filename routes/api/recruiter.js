@@ -29,12 +29,6 @@ router.post("/", (req, res) => {
     return res.status(400).json({ msg: "Invalid email" });
   }
 
-  contactNo = contactNo.trim();
-  const phoneRe = /^[0-9]{4}$/;
-  if (!phoneRe.test(contactNo)) {
-    return res.status(400).json({ msg: "Invalid phone number" });
-  }
-
   Recruiter.findOne({ email })
     .then((user) => {
       if (user) return res.status(400).json({ msg: "User already exists" });
